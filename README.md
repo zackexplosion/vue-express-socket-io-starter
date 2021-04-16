@@ -1,4 +1,6 @@
-# vue-express-socketio-starter
+# vue-express-socket-io-starter
+
+A starter template working with vue, express, socket.io
 
 ## Project setup
 ```
