@@ -28,9 +28,9 @@ export default {
   },
   methods: {
     onScan(decodedText, decodedResult) {
-      this.logs.unshift([decodedText, decodedResult])
+      this.logs.push([new Date().getTime(), decodedText, decodedResult])
 
-      if (this.logs.length > 20) {
+      if (this.logs.length > 5) {
         this.logs.shift()
       }
     },
