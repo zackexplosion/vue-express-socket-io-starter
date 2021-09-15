@@ -1,12 +1,12 @@
 <template>
   <div>
-  <QrcodeScan
-    :qrbox="200"
-    :fps="30"
-    @result="onScan"
-  />
-  <pre>
-    {{logs}}
+    <QrcodeScan
+      :qrbox="200"
+      :fps="30"
+      @result="onScan"
+    />
+    <pre>
+    {{ logs }}
   </pre>
   </div>
   <!-- <barcode /> -->
@@ -14,17 +14,17 @@
 
 <script>
 // import VueBarcode from 'vue-barcode';
-import QrcodeScan from '../QRCodeScanner.vue'
+import QrcodeScan from '@/components/QRCodeScanner.vue'
 
 export default {
+  components: {
+    // barcode: VueBarcode,
+    QrcodeScan,
+  },
   data() {
     return {
       logs: [],
     }
-  },
-  components: {
-    // barcode: VueBarcode,
-    QrcodeScan,
   },
   methods: {
     onScan(decodedText, decodedResult) {
