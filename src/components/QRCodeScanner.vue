@@ -1,16 +1,11 @@
 <template>
-  <div id="qr-code-full-region"></div>
+  <div id="qr-code-full-region" />
 </template>
 
 <script>
 
 export default {
-  name: 'qrcode-scanner',
-  data() {
-    return {
-      html5QrCode: null,
-    };
-  },
+  name: 'QrcodeScanner',
   props: {
     qrbox: {
       type: Number,
@@ -20,6 +15,11 @@ export default {
       type: Number,
       default: 30,
     },
+  },
+  data() {
+    return {
+      html5QrCode: null,
+    };
   },
   mounted() {
     const elementID = 'qr-code-full-region'

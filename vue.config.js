@@ -1,18 +1,20 @@
 module.exports = {
-  configureWebpack: {
-    resolve: {
-      alias: {
-        '@': './src/components',
-      },
-    },
-  },
+  // configureWebpack: {
+  //   resolve: {
+  //     alias: {
+  //       '@': './src/components',
+  //     },
+  //   },
+  // },
   devServer: {
     // before: () => {
     //   // app()
     // },
-    open: process.platform === 'darwin',
+    // open: process.platform === 'darwin',
+    open: false,
+    // public: 'notilusdev.dimosoftware.com',
     host: '0.0.0.0',
-    // port: 8085, // CHANGE YOUR PORT HERE!
+    disableHostCheck: true,
     https: true,
     hotOnly: false,
     proxy: {
