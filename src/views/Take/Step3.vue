@@ -1,14 +1,16 @@
 <template>
   <div>
-    選擇桌號
+    <List />
   </div>
 </template>
 
 <script>
 
+import List from '@/components/DeskList.vue'
+
 export default {
   components: {
-
+    List,
   },
   data() {
     return {

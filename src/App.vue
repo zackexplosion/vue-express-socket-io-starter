@@ -5,7 +5,9 @@
       <router-link to="/about">About</router-link>
     </div> -->
     <div id="header">
-      <h1>WAVE</h1>
+      <router-link to="/">
+        <h1>WAVE</h1>
+      </router-link>
     </div>
 
     <div id="content">

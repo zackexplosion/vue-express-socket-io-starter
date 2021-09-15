@@ -13,13 +13,15 @@
     </a-steps>
 
     <div :is="currentView" />
+    <hr>
+    開發專用區
     <div class="steps-action">
       <a-button
         v-if="currentStep < steps.length - 1"
         type="primary"
         @click="next"
       >
-        Next
+        下一步
       </a-button>
       <a-button
         v-if="currentStep == steps.length - 1"

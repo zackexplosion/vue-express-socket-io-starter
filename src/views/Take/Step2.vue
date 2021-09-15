@@ -1,14 +1,16 @@
 <template>
   <div>
-    選擇ＰＲ
+    <List />
   </div>
 </template>
 
 <script>
 
+import List from '@/components/PRList.vue'
+
 export default {
   components: {
-
+    List,
   },
   data() {
     return {
