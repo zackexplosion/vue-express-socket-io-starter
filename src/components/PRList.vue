@@ -4,7 +4,7 @@
       v-for="(user, index) in users"
       :key="index"
       class="users"
-      :class="(selectedID == user.id ? 'selected' : '')"
+      :class="(selected == user.name ? 'selected' : '')"
       :size="100"
       @click="select(user)"
     >
@@ -28,7 +28,7 @@ export default {
   },
   data() {
     return {
-      selectedID: -1,
+      selected: this.$store.state.take.pr_name,
       users: list.map((_, index) => ({
         name: _,
         id: index,
@@ -37,8 +37,8 @@ export default {
   },
   methods: {
     select(user) {
-      this.selectedID = user.id
-      console.log('user', user)
+      this.selected = user.name
+      this.$store.commit('setTakePRName', user.name)
     },
   },
 }

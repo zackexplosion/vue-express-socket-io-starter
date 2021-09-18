@@ -29,7 +29,7 @@
       <a-button
         v-if="currentStep == steps.length - 1"
         type="primary"
-        @click="$message.success('Processing complete!')"
+        @click="done"
       >
         Done
       </a-button>
@@ -89,6 +89,12 @@ export default {
     prev() {
       this.currentStep -= 1;
       this.currentView = this.steps[this.currentStep].component
+    },
+    done() {
+      this.$message.success('已成功取酒!三秒後跳回首頁')
+      setTimeout(() => {
+        this.$router.push('/')
+      }, 3000)
     },
   },
 }

@@ -3,7 +3,7 @@
     <a-avatar
       v-for="(desk, index) in desks"
       :key="index"
-      :class="(selectedID == desk ? 'selected' : '')"
+      :class="(selected == desk ? 'selected' : '')"
       :size="100"
       @click="select(desk)"
     >
@@ -20,13 +20,14 @@ export default {
   },
   data() {
     return {
-      selectedID: -1,
+      selected: this.$store.state.take.desk_number,
       desks,
     }
   },
   methods: {
     select(desk) {
-      this.selectedID = desk
+      this.selected = desk
+      this.$store.commit('setTakeDeskNumber', desk)
     },
   },
 }

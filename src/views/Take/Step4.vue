@@ -4,8 +4,8 @@
 
     <pre>
     要取的酒款是..
-    服務人員是...
-    桌號是...
+    服務人員是 {{ form.pr_name }}
+    桌號是 {{ form.desk_number }}
     </pre>
   </div>
 </template>
@@ -18,7 +18,7 @@ export default {
   },
   data() {
     return {
-
+      form: this.$store.state.take,
     }
   },
   methods: {
