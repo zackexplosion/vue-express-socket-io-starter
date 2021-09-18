@@ -1,9 +1,11 @@
 <template>
-  <div class="desk-list">
+  <div class="desk-list selectable-box">
     <a-avatar
       v-for="(desk, index) in desks"
       :key="index"
+      :class="(selectedID == desk ? 'selected' : '')"
       :size="100"
+      @click="select(desk)"
     >
       {{ desk }}
     </a-avatar>
@@ -18,20 +20,16 @@ export default {
   },
   data() {
     return {
+      selectedID: -1,
       desks,
     }
   },
   methods: {
-
+    select(desk) {
+      this.selectedID = desk
+    },
   },
 }
 </script>
 <style scoped>
-.desk-list {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-content: space-between;
-}
 </style>

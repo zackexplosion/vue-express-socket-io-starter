@@ -35,6 +35,17 @@
   text-align: center;
 }
 
+.selectable-box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+  .ant-avatar.selected {
+    background: rgb(3, 3, 117);
+  }
+}
+
 // #nav {
 //   padding: 30px;
 

@@ -12,7 +12,10 @@
       </template>
     </a-steps>
 
-    <div :is="currentView" />
+    <div
+      :is="currentView"
+      @next="next"
+    />
     <hr>
     開發專用區
     <div class="steps-action">

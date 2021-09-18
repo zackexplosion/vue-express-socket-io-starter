@@ -1,10 +1,12 @@
 <template>
-  <div class="pr-list">
+  <div class="pr-list selectable-box">
     <a-avatar
       v-for="(user, index) in users"
       :key="index"
       class="users"
+      :class="(selectedID == user.id ? 'selected' : '')"
       :size="100"
+      @click="select(user)"
     >
       {{ user.name }}
     </a-avatar>
@@ -14,7 +16,7 @@
 <script>
 const list = [
   '小任', '阿哲', 'Jason',
-  'Jsaon', '小安', 'Adam',
+  '小安', 'Adam',
   '鬍子', 'Debby', '陳董',
   '水水', '羅羅', '小澤',
   'Eric', 'Jerry', '阿蒼',
@@ -26,6 +28,7 @@ export default {
   },
   data() {
     return {
+      selectedID: -1,
       users: list.map((_, index) => ({
         name: _,
         id: index,
@@ -33,16 +36,13 @@ export default {
     }
   },
   methods: {
-
+    select(user) {
+      this.selectedID = user.id
+      console.log('user', user)
+    },
   },
 }
 </script>
 <style scoped>
-.pr-list {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-content: space-between;
-}
+
 </style>
